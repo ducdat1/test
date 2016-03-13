@@ -1,0 +1,24 @@
+#myCarousel.carousel.slide[data-ride="carousel"]
+  ol.carousel-indicators
+    li.active[data-target="#myCarousel" data-slide-to="0"]
+    li[data-target="#myCarousel" data-slide-to="1"]
+    li[data-target="#myCarousel" data-slide-to="2"]
+    li[data-target="#myCarousel" data-slide-to="3"]
+  .carousel-inner[role="listbox"]
+    .item.active
+      = image_tag("1.jpg")
+    .item
+      = image_tag("2.jpg")
+    .item
+      = image_tag("3.jpg")
+    .item
+      = image_tag("4.jpg")
+  a.left.carousel-control[href="#myCarousel" role="button" data-slide="prev"]
+    span.glyphicon.glyphicon-chevron-left[aria-hidden="true"]
+    span.sr-only
+      | Previous
+  a.right.carousel-control[href="#myCarousel" role="button" data-slide="next"]
+    span.glyphicon.glyphicon-chevron-right[aria-hidden="true"]
+    span.sr-only
+      | Next<div id="carousel-id" class="carousel slide" data-ride="carousel">
+ 

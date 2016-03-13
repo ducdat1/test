@@ -1,0 +1,46 @@
+= content_for :title do
+	title
+		| Chi tiết sản phẩm
+
+.centerbar
+#main-content
+  ol.breadcrumb
+    li
+      <a href="/">Home</a>
+    
+    li
+      <a href="/sanpham">Sản phẩm</a>
+    
+    li.active
+      = @product.name
+
+  .product-show
+    | <div class="col-md-6 box-img-l" style="background-image: url(
+    = @product.img_url
+    | );"></div>  
+    .info-product.col-md-6
+      h1
+        = @product.name
+      .price[style="border-left: 3px solid #cf0202"]
+        .pricebox
+          span.price
+            | Giá bán:
+            .price-sell
+              = sprintf("$%0.02f", @product.price)
+          span.saving
+      .des[style="margin: 20px 0px; border: 1px solid #ececec; padding: 10px;"]
+        .col-md-8
+          p
+          strong Description:
+          = @product.description
+          p
+            strong Số lượng
+        .col-md-4
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. At odio error ea accusantium molestias. Ab praesentium, earum quam magni, modi quisquam voluptate accusantium eius laboriosam. Maxime officia obcaecati, in dolore.
+
+      = button_to 'Thêm vào giỏ hàng', line_items_path(product_id: @product), remote: true
+      .back-product
+        button
+          = link_to 'Tiếp tục mua hàng', sanpham_url, method: :get
+          
+

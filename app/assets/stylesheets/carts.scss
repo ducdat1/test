@@ -1,0 +1,87 @@
+.carts, #side #cart{
+   .cart_title {
+     font: 120% bold;
+   }
+  
+   .item_price, .total_line {
+     text-align: right;
+   }
+  
+   .total_line .total_cell {
+     font-weight: bold;
+     border-top: 1px solid #595;
+   }
+  button{
+    margin: 0px 1px 5px 5px;
+  }
+}
+.box-cart{
+  table{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ebebeb;
+    border-width: 1px 0px 1px 1px;
+    border-bottom: none;
+    border-top-color: #e3e3e3;
+    th{
+      padding: 10px;
+      border-right: 1px solid #e3e3e3;
+      border-bottom: 1px solid #e3e3e3;
+      text-align: center;
+      white-space: nowrap;
+      font-weight: bold;
+      background-color: #eee;
+      .right{
+        text-align: right;
+      }
+      .left{
+        text-align: left;
+      }
+      .center{
+        text-align: center;
+      }
+    }
+    th.quantity{
+      width:80px;
+    }
+    tr{
+      background-color: #fff;
+      background-color: transparent;
+    }
+    td{
+      text-align: center !important ;
+      padding: 8px 5px;
+      border-right: 1px solid #e3e3e3;
+      border-bottom: 1px solid #e3e3e3;
+      input#quantity{
+        width: 70px;
+        background-color: transparent;
+      }
+    }
+    td.xoasp{
+      padding: 0px;
+      margin: 0px;
+      text-align: center !important;
+    }
+  }
+}
+
+input.search{
+  background-color: transparent;
+}
+.main{
+  table{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    tr.cart-views{
+      background-color: #fff;
+      background-color: transparent;
+    }
+    td{
+      text-align: left !important ;
+      padding: 8px 5px;
+    }
+  }
+}

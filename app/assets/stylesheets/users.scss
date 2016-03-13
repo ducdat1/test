@@ -1,0 +1,24 @@
+input[type="submit"], button{
+    cursor:pointer; 
+    padding:5px 15px; 
+    background:#1090DA; 
+    border:1px solid #2AA7EF; 
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+    -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+    box-shadow: 0 0 4px rgba(0,0,0, .75);
+
+    color:#f3f3f3;
+    font-size:1.1em;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus, button:hover, button:focus{
+    background-color :#0C679D; 
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+    box-shadow: 0 0 1px rgba(0,0,0, .75);
+}

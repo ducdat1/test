@@ -1,0 +1,19 @@
+.depot_form
+  - if flash[:alert]
+    p#notice
+      = flash[:alert]
+  = form_tag do
+    fieldset
+      legend
+        | Please Log In
+      table.login
+        tr
+          td = label_tag :name, 'Name:'
+          td = text_field_tag :name, params[:name]
+        tr
+          td = label_tag :password, 'Password:'
+          td = password_field_tag :password, params[:password]
+        tr.log-btn
+          td = submit_tag "Đăng nhập"
+
+  = link_to " Nếu bạn chưa có tài khoản, đăng ký ngay!", new_user_path, method: :get

@@ -1,0 +1,22 @@
+= form_for @order do |f|
+  - if @order.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      ul
+        - @order.errors.full_messages.each do |message|
+          li = message
+  table
+    tr
+      td = f.label :name
+      td = f.text_field :name
+    tr
+      td = f.label :address
+      td = f.text_area :address, rows: 3, cols: 40
+    tr
+      td = f.label :email
+      td = f.text_field :email
+    tr 
+      td = f.label :pay_type
+      td = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'select a payment method'
+  br
+  .actions = f.submit 'Place Order'

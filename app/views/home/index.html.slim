@@ -1,0 +1,27 @@
+= content_for :title do
+  title
+   | Trang chủ
+
+- if notice
+  p#notice
+    = notice
+
+
+legend
+    | Cửa hàng của tôi                                              
+- @products.each do |product|
+  .box-product
+    .entry
+        |  <img src="
+        = product.img_url
+        |  " alt="product" height="200">
+        p
+          = product.description
+          button[class="btn btn-default"]
+            = link_to 'Xem chi tiết', product
+        h3
+          = product.name
+        .price_line
+          span.price
+            = sprintf("$%0.02f", product.price)
+          = button_to 'Add to Cart', line_items_path(product_id: product), remote: true

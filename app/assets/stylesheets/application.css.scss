@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  padding-top: 60px;
+}
+#columns{
+	float:right;
+	.display_cart{
+		position: fixed;
+		top: 40%;
+		right:0;
+		z-index: 1111111;
+		.hid{
+			display: none;
+		}
+		.sho{
+			display: block;
+		}
+	}
+	#side {
+		display: none;
+		position: fixed;
+		top: 40%;
+		right: 0;
+		padding: 1em 1em;
+		width: 15em;				
+		z-index: 1000000;
+		box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+		background: #C2FFFF;
+		form{
+			display: inline; 
+		}
+		div {
+
+		   display: inline;
+		}
+		  
+		input {
+		   font-size: small;
+		}
+		  
+		#cart {		   
+		   font-size: smaller;
+		   color: black;
+		   form{
+		   	display: inline;
+		   	width: 100px;
+		   	margin-right: 10px;
+		   }
+		   table {
+			   border-top: 1px dotted #595;
+			   border-bottom: 1px dotted #595;
+			   margin-bottom: 10px;
+		   }
+		}
+		  
+		ul {
+			padding: 0;
+			li {
+				list-style: none inside;
+				a {
+					color: #bfb;
+					font-size: small;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+.content{
+	.slide{
+	   margin-bottom: 20px;
+	}
+	#right{
+		padding: 0;
+		box-shadow: 0 0 4px rgba(0,0,0,0.6);
+		border: 1px solid grey;
+	}
+}
+
+
+.footer{
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+nav.navbar{
+	.container-fluid{
+		.collapse{
+			form.navbar-left{
+				#result{
+					width : 300px;
+					display: none;
+					position: absolute;
+					z-index: 99999999999;
+					background-color: white;
+					box-shadow: 0 0 4px rgba(0,0,0,0.5);
+					margin-top: 10px
+				}
+				button.search:hover{
+					background-color: #3EEFEF;
+				}
+			}
+		}
+	}
+}

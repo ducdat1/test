@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    = yield :title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  |  <body class="
+  = controller.controller_name
+  | ">
+
+  =render :partial =>"partials/navbar"
+  .container
+
+    #columns
+      #side
+        - if @cart
+          |  <div id="cart" 
+          - if @cart.line_items.empty?
+             |  style="display: none" 
+          |  > 
+
+          = render @cart
+
+    .display_cart
+        .sho
+          button.sho[type="button"]
+            | Show 
+        .hid
+          button.hid[type="button"]
+            | Hide 
+           
+  .content.col-md-12
+    .slide.col-md-9
+        =render "partials/slide"
+  #right.col-md-3
+    = image_tag("contact.jpg")
+    .fix
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi excepturi eveniet laborum,
+    = image_tag("ads54.jpg")
+    
+  .main.col-md-12
+    = yield 
+    
+  footer.footer
+    .col-sm-6.col-sm-offset-3.footer
+      p.text-muted
+        | Copyright &copy by kaina 2015
+
+
+    
+= javascript_include_tag 'application', 'data-turbolinks-track' => true

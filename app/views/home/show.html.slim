@@ -1,0 +1,49 @@
+= content_for :title do   
+  title
+   | Trang sản phẩm
+
+
+ol.breadcrumb
+    li
+      <a href="/">Home</a>  
+    li.active
+      | Sản phẩm
+
+.new-pro
+  legend
+    | Sản phẩm mới
+  #table-pro
+    - @products.each do |product|
+      .row
+        .display#container
+          .box
+            | <div class="box-img" style="background-image: url(
+            = product.img_url
+            | );"></div>
+            p
+              = product.description  
+              button[class="btn btn-default"]
+                = link_to 'Xem chi tiết', product      
+          h3 = product.name
+          .price_line
+            span.price
+              = sprintf("$%0.02f", product.price)         
+          = button_to 'Mua hàng', line_items_path(product_id: product), remote: true
+        
+            
+.spe-pro
+  legend
+    | Sản phẩm tiêu biểu
+.promotion
+  legend
+    | Sản phẩm khuyến mãi
+.part-pro
+  legend
+    | Sản phẩm phụ và phụ tùng
+        
+ 
+
+
+
+
+  

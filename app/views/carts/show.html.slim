@@ -1,0 +1,62 @@
+= content_for :title do 
+  title
+    | Giỏ hàng
+end
+ 
+/ - unless @cart.line_items.empty?
+legend
+  | Giỏ hàng của bạn
+.box-cart
+  table
+  	thead
+  	  tr
+  	  	th.product-img
+  	  	  | Hình
+  	  	th.product-name[colspan="2"]
+  	  	  | Tên sản phẩm
+  	  	th.quantity
+  	  	  | Số lượng
+  	  	th.center
+  	  	  | Gía
+  	  	th
+   	- @cart.line_items.each do |item|
+      tr
+      	td
+      	  |  <img src="
+          = item.product.img_url
+          |  " alt="product" height="50">
+  		td[colspan="2"]
+  		  = item.product.name
+  		td
+  		  | <input type="number" name="qty" id="quantity" class="form-control" value="
+  		  = item.quantity	
+  		  | " >	
+  		td.item_price
+  	  	  = number_to_currency(item.total_price)
+	  	td.xoasp
+	  	  = button_to 'Xoá sản phẩm', line_item_path(id: item), method: :delete
+
+	tr.total_line
+	  td[colspan="4"]
+	    | Total
+	  td.total_cell
+    	= number_to_currency(@cart.total_price)
+      td
+        = button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?'
+
+br
+table
+  tr.cart-view
+    td = button_to "Thanh toán", new_order_path, method: :get 
+    td = button_to "Cập nhật giỏ hàng", new_order_path, method: :get 
+    td = button_to "Tiếp tục mua hàng", home_url, method: :get 
+/ - else
+/   legend
+/     | Giỏ hàng của bạn
+/   h1
+/     | Giỏ hàng của bạn đang trống
+.display-test
+br
+br
+span.glyphicon.glyphicon-chevron-left	
+= link_to 'Back to home', home_path
